@@ -3,138 +3,164 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>รู้ทันวัณโรค (Tuberculosis - TB)</title>
-  <meta name="description" content="ข้อมูลสำหรับประชาชนเกี่ยวกับวัณโรค (TB) — อาการ สาเหตุ การรักษา การป้องกัน และแหล่งข้อมูลดาวน์โหลด" />
+  <title>ศูนย์ความรู้วัณโรค (Tuberculosis Knowledge Center)</title>
+  <meta name="description" content="เว็บไซต์ให้ความรู้เกี่ยวกับวัณโรค TB อาการ การวินิจฉัย การรักษา การป้องกัน พร้อมตัวอย่างเคสจริงและเอกสารดาวน์โหลด" />
   <style>
     :root{
-      --bg:#f7fafc; --card:#fff; --muted:#6b7280; --accent1:#0ea5a4; --accent2:#0369a1;
-      --maxw:1000px;
-      --shadow: 0 6px 18px rgba(2,6,23,0.08);
-      --radius:12px;
-      font-family: Inter, "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      --bg:#f2f6fa; --card:#fff; --muted:#6b7280; --accent1:#0f6cbd; --accent2:#0ea5a4;
+      --maxw:1100px;
+      --shadow:0 6px 20px rgba(15,23,42,0.08);
+      --radius:14px;
+      font-family:Inter, "Noto Sans Thai", system-ui;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.5}
-    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
-    header{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:34px;border-radius:0 0 18px 18px}
-    header h1{margin:0 0 6px;font-size:28px}
-    header p{margin:0;color:rgba(255,255,255,0.9)}
-    .hero{display:grid;grid-template-columns:1fr;gap:20px;margin-top:24px}
-    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    @media (max-width:900px){ .grid3{grid-template-columns:1fr} }
-    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    @media (max-width:900px){ .grid2{grid-template-columns:1fr} }
-    h2,h3{margin:0 0 8px}
-    h4{margin:0 0 6px;font-size:15px}
-    p{margin:0 0 10px}
-    ul{margin:0 0 10px;padding-left:18px}
-    .muted{color:var(--muted);font-size:14px}
-    table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
-    th,td{padding:12px;text-align:left;border-top:1px solid #edf2f7;font-size:14px}
-    thead th{background:#f1f5f9;font-weight:600}
-    .resources a{display:block;padding:14px;border-radius:10px;background:#fff;text-decoration:none;color:inherit;box-shadow:var(--shadow);margin-bottom:10px}
-    footer{margin-top:22px;color:var(--muted);text-align:center;padding:22px 0}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.65}
+    header{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;padding:42px 0 50px;border-radius:0 0 20px 20px;box-shadow:var(--shadow)}
+    header .container{max-width:var(--maxw);margin:auto;padding:20px}
+    header h1{margin:0;font-size:34px;font-weight:700}
+    header p{margin:6px 0 0;font-size:18px;color:#e0f2fe}
+
+    .container{max-width:var(--maxw);margin:auto;padding:28px}
+    .card{background:var(--card);padding:26px;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:26px}
+
+    h2{margin-top:0;font-size:26px;color:var(--accent1)}
+    h3{margin-top:0;font-size:20px;color:var(--accent2)}
+    h4{margin-bottom:6px}
+
+    ul{padding-left:20px;margin:10px 0}
+
+    .tabs{display:flex;gap:6px;margin-bottom:20px;border-bottom:2px solid #dfe3e8;padding-bottom:6px}
+    .tab{padding:10px 18px;border-radius:10px 10px 0 0;cursor:pointer;background:#e8edf2}
+    .tab.active{background:var(--card);border-bottom:3px solid var(--accent1);font-weight:700}
+    .tab-content{display:none}
+    .tab-content.active{display:block}
+
+    table{width:100%;border-collapse:collapse;margin-top:12px;background:#fff;border-radius:10px;overflow:hidden}
+    th,td{padding:12px;border-bottom:1px solid #e5e7eb;font-size:15px}
+    thead th{background:#f1f5f9;text-align:left}
+
+    footer{text-align:center;padding:26px;color:var(--muted);margin-top:30px}
     .small{font-size:13px;color:var(--muted)}
-    .two-col{display:flex;gap:12px}
-    @media (max-width:900px){ .two-col{flex-direction:column} }
+
+    .case-box{background:#f8fafc;border-left:6px solid var(--accent1);padding:18px;border-radius:10px;margin:15px 0}
   </style>
+
+  <script>
+    function openTab(id){
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+      document.getElementById('tab-'+id).classList.add('active');
+      document.getElementById('content-'+id).classList.add('active');
+    }
+  </script>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>รู้ทันวัณโรค (Tuberculosis - TB)</h1>
-      <p>ข้อมูลสำหรับประชาชน: ครอบคลุมอาการ สาเหตุ การตรวจรักษา การป้องกัน และแหล่งเอกสารดาวน์โหลด</p>
+      <h1>ศูนย์ความรู้วัณโรค (Tuberculosis Knowledge Center)</h1>
+      <p>แหล่งข้อมูลมาตรฐานสำหรับประชาชนและบุคลากรสาธารณสุข</p>
     </div>
   </header>
 
-  <main class="container" role="main" aria-labelledby="main-heading">
-    <section class="hero">
-      <div>
-        <div class="card">
-          <h2 id="main-heading">วัณโรคคืออะไร?</h2>
-          <p>วัณโรค (TB) เกิดจากแบคทีเรีย <em>Mycobacterium tuberculosis</em>. มักเริ่มที่ปอด (pulmonary TB) แต่สามารถลุกลามไปยังอวัยวะอื่นได้ (extrapulmonary TB).</p>
-          <p class="muted">แม้จะเป็นโรคที่ป้องกันและรักษาได้ แต่ TB ยังเป็นปัญหาสาธารณสุขระดับโลก — การตรวจและรักษาทันทีทำให้การหายขาดมีโอกาสสูงขึ้น</p>
-        </div>
+  <main class="container">
 
-        <div style="height:18px"></div>
+    <div class="tabs">
+      <div class="tab active" id="tab-home" onclick="openTab('home')">ข้อมูลวัณโรค</div>
+      <div class="tab" id="tab-case" onclick="openTab('case')">ตัวอย่างเคสจริง</div>
+      <div class="tab" id="tab-download" onclick="openTab('download')">ดาวน์โหลดเอกสาร</div>
+    </div>
 
-        <div class="card">
-          <h3>วิธีการแพร่เชื้อ</h3>
-          <p>เชื้อแพร่ผ่านละอองฝอยในอากาศ เมื่อผู้ป่วยไอ จาม พูด หรือหัวเราะ</p>
-          <ul>
-            <li>ความใกล้ชิดและระยะเวลาที่อยู่ใกล้ผู้ป่วย</li>
-            <li>คุณภาพการระบายอากาศ</li>
-            <li>ปริมาณเชื้อที่ผู้ป่วยปล่อยออกมา</li>
-          </ul>
+    <!-- HOME CONTENT -->
+    <section class="tab-content active" id="content-home">
+      <div class="card">
+        <h2>วัณโรคคืออะไร?</h2>
+        <p>วัณโรคเกิดจากเชื้อแบคทีเรีย <em>Mycobacterium tuberculosis</em> ติดต่อผ่านทางอากาศเมื่อผู้ป่วยไอ จาม พูด หรือตะโกน เชื้อสามารถอยู่ในร่างกายแบบแฝงหรือทำให้เกิดโรคได้</p>
+      </div>
 
-          <div style="margin-top:8px" class="two-col">
-            <div class="card small">
-              <h4>ลดการแพร่</h4>
-              <ul>
-                <li>สวมหน้ากาก</li>
-                <li>เปิดหน้าต่าง ระบายอากาศ</li>
-                <li>แยกผู้ป่วยจนกว่าแพทย์ยืนยันว่าไม่แพร่เชื้อ</li>
-              </ul>
-            </div>
-            <div class="card small">
-              <h4>กลุ่มเสี่ยง</h4>
-              <p class="small">ผู้ใกล้ชิดผู้ป่วย, ผู้มีภูมิคุ้มกันต่ำ, ผู้อาศัยในพื้นที่แออัด</p>
-            </div>
-          </div>
-        </div>
+      <div class="card">
+        <h3>วิธีการแพร่เชื้อ</h3>
+        <ul>
+          <li>การสูดดมละอองที่มีเชื้อจากผู้ป่วยที่ยังแพร่เชื้ออยู่</li>
+          <li>อยู่ใกล้ชิดในที่อากาศไม่ถ่ายเท เช่น หอพัก โรงงาน เรือนจำ</li>
+          <li>ความเสี่ยงเพิ่มขึ้นเมื่อผู้ป่วยยังไม่ได้รับยารักษา</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>การสังเกตอาการ</h3>
+        <ul>
+          <li><strong>วัณโรคปอด:</strong> ไอเรื้อรัง 2–3 สัปดาห์ขึ้นไป, เสมหะเป็นเลือด, น้ำหนักลด</li>
+          <li><strong>วัณโรคนอกปอด:</strong> ขึ้นกับอวัยวะ เช่น ต่อมน้ำเหลืองบวม, ปวดหลัง (วัณโรคกระดูก), ปวดศีรษะ (วัณโรคสมอง)</li>
+          <li><strong>การติดเชื้อแฝง:</strong> ไม่มีอาการแต่ตรวจพบว่ามีเชื้อ ต้องรักษาเพื่อป้องกันเกิดโรค</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>ยารักษาวัณโรคหลัก</h3>
+        <table>
+          <thead>
+            <tr><th>ยา</th><th>ชื่อเต็ม</th><th>ผลข้างเคียงสำคัญ</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>INH</td><td>Isoniazid</td><td>ปลายประสาทอักเสบ, ทำลายตับ</td></tr>
+            <tr><td>RIF</td><td>Rifampicin</td><td>ปัสสาวะสีส้ม, ทำลายตับ, ยาตีกันบางชนิด</td></tr>
+            <tr><td>EMB</td><td>Ethambutol</td><td>สายตาพร่ามัว สีผิดปกติ</td></tr>
+            <tr><td>PZA</td><td>Pyrazinamide</td><td>ปวดข้อ, ทำลายตับ</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>หลังการหายป่วย</h3>
+        <ul>
+          <li>มาตรวจติดตามตามแพทย์นัด</li>
+          <li>ดูแลโภชนาการให้สมบูรณ์</li>
+          <li>หลีกเลี่ยงการสูบบุหรี่และแอลกอฮอล์</li>
+        </ul>
       </div>
     </section>
 
-    <section style="margin-top:18px" class="card" aria-labelledby="symptoms">
-      <h3 id="symptoms">การสังเกตอาการ</h3>
-      <div class="grid3" style="margin-top:12px">
-        <div>
-          <h4>Pulmonary TB (ปอด)</h4>
-          <ul>
-            <li>ไอเรื้อรัง 2–3 สัปดาห์ขึ้นไป</li>
-            <li>เสมหะมีเลือด</li>
-            <li>เจ็บหน้าอก หายใจลำบาก</li>
-          </ul>
+    <!-- CASE STUDIES -->
+    <section class="tab-content" id="content-case">
+      <div class="card">
+        <h2>ตัวอย่างเคสจริง (Case Study)</h2>
+
+        <div class="case-box">
+          <h4>เคสที่ 1 — วัณโรคปอดในคนทำงานโรงงาน</h4>
+          <p><strong>ข้อมูล:</strong> ชายอายุ 34 ปี ไอเรื้อรัง 3 สัปดาห์ ทำงานในโรงงานอากาศปิด</p>
+          <p><strong>การตรวจ:</strong> X-ray พบฝ้าขาว, ผล GeneXpert พบเชื้อ MTB ไม่ดื้อยา</p>
+          <p><strong>การรักษา:</strong> 2HRZE + 4HR ตามมาตรฐาน</p>
+          <p><strong>ผลลัพธ์:</strong> หายขาดใน 6 เดือน หน้าที่ทำงานปรับปรุงระบบระบายอากาศเพิ่มเติม</p>
         </div>
-        <div>
-          <h4>Extrapulmonary TB (นอกปอด)</h4>
-          <p class="small">อาการขึ้นกับอวัยวะ เช่น ต่อมน้ำเหลืองบวม ปวดข้อ ปวดศีรษะ</p>
+
+        <div class="case-box">
+          <h4>เคสที่ 2 — วัณโรคกระดูก (Extrapulmonary TB)</h4>
+          <p><strong>ข้อมูล:</strong> หญิงอายุ 27 ปี ปวดหลังรุนแรง เดินลำบาก</p>
+          <p><strong>การตรวจ:</strong> MRI พบกระดูกสันหลังติดเชื้อ TB</p>
+          <p><strong>การรักษา:</strong> รักษาด้วยยา 9–12 เดือน + กายภาพบำบัด</p>
+          <p><strong>ผลลัพธ์:</strong> เดินได้ตามปกติภายใน 4 เดือน</p>
         </div>
-        <div>
-          <h4>Latent TB (ติดเชื้อแฝง)</h4>
-          <p class="small">ไม่มีอาการแต่มีเชื้อในร่างกาย</p>
-        </div>
+
       </div>
     </section>
 
-    <section style="margin-top:18px" class="card">
-      <h3>สาเหตุและปัจจัยเสี่ยง</h3>
-      <ul>
-        <li>ภูมิคุ้มกันต่ำ เช่น ผู้ติดเชื้อเอชไอวี</li>
-        <li>เบาหวาน ภาวะโภชนาการไม่ดี</li>
-        <li>สูบบุหรี่ ดื่มแอลกอฮอล์มาก</li>
-      </ul>
-    </section>
-
-    <section style="margin-top:18px" class="card">
-      <h3>การรักษา</h3>
-      <p>การรักษาปกติใช้เวลาประมาณ 6 เดือน โดยใช้ยาหลัก 4 ชนิด ได้แก่ INH, RIF, EMB, PZA</p>
-    </section>
-
-    <section style="margin-top:18px" class="card resources">
-      <h3>แหล่งข้อมูลและดาวน์โหลด (PDF)</h3>
-      <p class="small">คลิกเพื่อดาวน์โหลดเอกสารแนวทาง</p>
-      <div style="margin-top:10px">
-        <a href="https://ddc.moph.go.th/uploads/publish/1253220220330064337.pdf" target="_blank">แนวทางควบคุมวัณโรค 2564</a>
-        <a href="https://www.who.int/news-room/fact-sheets/detail/tuberculosis" target="_blank">WHO — Tuberculosis</a>
+    <!-- DOWNLOAD -->
+    <section class="tab-content" id="content-download">
+      <div class="card">
+        <h2>ดาวน์โหลดเอกสารทางการ</h2>
+        <ul>
+          <li><a href="https://ddc.moph.go.th/uploads/publish/1253220220330064337.pdf" target="_blank">แนวทางควบคุมวัณโรคประเทศไทย 2564 (PDF)</a></li>
+          <li><a href="https://www.who.int/news-room/fact-sheets/detail/tuberculosis" target="_blank">WHO Fact Sheet – Tuberculosis</a></li>
+          <li><a href="https://www.cdc.gov/tb/publications/factsheets/general/tb.htm" target="_blank">CDC – TB Overview</a></li>
+        </ul>
       </div>
     </section>
 
     <footer>
-      <p>จัดทำเพื่อเผยแพร่ความรู้เกี่ยวกับวัณโรค — โปรดปรึกษาแพทย์เมื่อมีอาการผิดปกติ</p>
-      <p class="small" style="margin-top:6px"><strong>จัดทำโดย นางสาว กษมา ปันยารชุน</strong></p>
+      <p>จัดทำเพื่อให้ความรู้สาธารณะ — โปรดปรึกษาแพทย์เมื่อมีอาการผิดปกติ</p>
+      <p class="small">จัดทำโดย นางสาว กษมา ปันยารชุน</p>
     </footer>
+
   </main>
 </body>
 </html>
