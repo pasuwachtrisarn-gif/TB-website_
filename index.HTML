@@ -1,135 +1,140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ข้อมูลโรควัณโรค (TB)</title>
-<style>
-    body { font-family: Arial, sans-serif; line-height: 1.7; margin: 0; padding: 0; background: #f7f7f7; }
-    header { background: #b71c1c; color: white; padding: 20px; text-align: center; }
-    section { background: white; margin: 20px auto; padding: 20px; max-width: 900px; border-radius: 10px; }
-    h2 { color: #b71c1c; }
-    ul { padding-left: 20px; }
-    footer { text-align: center; padding: 20px; margin-top: 20px; color: #555; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>รู้ทันวัณโรค (Tuberculosis - TB)</title>
+  <meta name="description" content="ข้อมูลสำหรับประชาชนเกี่ยวกับวัณโรค (TB) — อาการ สาเหตุ การรักษา การป้องกัน และแหล่งข้อมูลดาวน์โหลด" />
+  <style>
+    :root{
+      --bg:#f7fafc; --card:#fff; --muted:#6b7280; --accent1:#0ea5a4; --accent2:#0369a1;
+      --maxw:1000px;
+      --shadow: 0 6px 18px rgba(2,6,23,0.08);
+      --radius:12px;
+      font-family: Inter, "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#0f172a;line-height:1.5}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+    header{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:34px;border-radius:0 0 18px 18px}
+    header h1{margin:0 0 6px;font-size:28px}
+    header p{margin:0;color:rgba(255,255,255,0.9)}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;margin-top:24px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width:900px){ .grid3{grid-template-columns:1fr} }
+    .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:900px){ .grid2{grid-template-columns:1fr} }
+    h2,h3{margin:0 0 8px}
+    h4{margin:0 0 6px;font-size:15px}
+    p{margin:0 0 10px}
+    ul{margin:0 0 10px;padding-left:18px}
+    .muted{color:var(--muted);font-size:14px}
+    table{width:100%;border-collapse:collapse;background:var(--card);border-radius:8px;overflow:hidden}
+    th,td{padding:12px;text-align:left;border-top:1px solid #edf2f7;font-size:14px}
+    thead th{background:#f1f5f9;font-weight:600}
+    .resources a{display:block;padding:14px;border-radius:10px;background:#fff;text-decoration:none;color:inherit;box-shadow:var(--shadow);margin-bottom:10px}
+    footer{margin-top:22px;color:var(--muted);text-align:center;padding:22px 0}
+    .small{font-size:13px;color:var(--muted)}
+    .two-col{display:flex;gap:12px}
+    @media (max-width:900px){ .two-col{flex-direction:column} }
+  </style>
 </head>
 <body>
-<header>
-    <h1>ศูนย์ให้ความรู้เรื่องโรควัณโรค (Tuberculosis: TB)</h1>
-    <p>ข้อมูลเพื่อประชาชนทั่วไป เข้าใจง่าย ใช้ได้จริง</p>
-</header>
+  <header>
+    <div class="container">
+      <h1>รู้ทันวัณโรค (Tuberculosis - TB)</h1>
+      <p>ข้อมูลสำหรับประชาชน: ครอบคลุมอาการ สาเหตุ การตรวจรักษา การป้องกัน และแหล่งเอกสารดาวน์โหลด</p>
+    </div>
+  </header>
 
-<section>
-<h2>วัณโรค (TB) คืออะไร?</h2>
-<p>วัณโรคเป็นโรคติดเชื้อเรื้อรัง เกิดจากเชื้อ <strong>Mycobacterium tuberculosis</strong> มักพบที่ปอดมากที่สุด แต่สามารถเกิดที่อวัยวะอื่นได้ เช่น ต่อมน้ำเหลือง สมอง กระดูก ไต เป็นต้น</p>
-<p>วัณโรคสามารถรักษาหายได้ หากกินยาถูกต้องและครบกำหนด</p>
-</section>
+  <main class="container" role="main" aria-labelledby="main-heading">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h2 id="main-heading">วัณโรคคืออะไร?</h2>
+          <p>วัณโรค (TB) เกิดจากแบคทีเรีย <em>Mycobacterium tuberculosis</em>. มักเริ่มที่ปอด (pulmonary TB) แต่สามารถลุกลามไปยังอวัยวะอื่นได้ (extrapulmonary TB).</p>
+          <p class="muted">แม้จะเป็นโรคที่ป้องกันและรักษาได้ แต่ TB ยังเป็นปัญหาสาธารณสุขระดับโลก — การตรวจและรักษาทันทีทำให้การหายขาดมีโอกาสสูงขึ้น</p>
+        </div>
 
-<section>
-<h2>การแพร่เชื้อ</h2>
-<ul>
-    <li>แพร่ผ่านทางอากาศจากการไอ จาม หรือพูด</li>
-    <li>อยู่ใกล้ชิดผู้ป่วยที่ยังไม่ได้รับการรักษา</li>
-    <li>เชื้อล่องลอยในอากาศและเข้าสู่ปอดคนที่สูดหายใจเข้าไป</li>
-</ul>
-</section>
+        <div style="height:18px"></div>
 
-<section>
-<h2>อาการของวัณโรค</h2>
-<h3>1) วัณโรคปอด (Pulmonary TB)</h3>
-<ul>
-    <li>ไอเรื้อรังเกิน 2–3 สัปดาห์</li>
-    <li>ไอเป็นเลือด เจ็บหน้าอก</li>
-    <li>เหนื่อยง่าย</li>
-</ul>
+        <div class="card">
+          <h3>วิธีการแพร่เชื้อ</h3>
+          <p>เชื้อแพร่ผ่านละอองฝอยในอากาศ เมื่อผู้ป่วยไอ จาม พูด หรือหัวเราะ</p>
+          <ul>
+            <li>ความใกล้ชิดและระยะเวลาที่อยู่ใกล้ผู้ป่วย</li>
+            <li>คุณภาพการระบายอากาศ</li>
+            <li>ปริมาณเชื้อที่ผู้ป่วยปล่อยออกมา</li>
+          </ul>
 
-<h3>2) วัณโรคนอกปอด (Extrapulmonary TB)</h3>
-<ul>
-    <li>ต่อมน้ำเหลืองโต กดเจ็บ</li>
-    <li>ปวดหลัง ปวดข้อ</li>
-    <li>ปวดศีรษะ คอแข็ง (หากอยู่ที่เยื่อหุ้มสมอง)</li>
-</ul>
+          <div style="margin-top:8px" class="two-col">
+            <div class="card small">
+              <h4>ลดการแพร่</h4>
+              <ul>
+                <li>สวมหน้ากาก</li>
+                <li>เปิดหน้าต่าง ระบายอากาศ</li>
+                <li>แยกผู้ป่วยจนกว่าแพทย์ยืนยันว่าไม่แพร่เชื้อ</li>
+              </ul>
+            </div>
+            <div class="card small">
+              <h4>กลุ่มเสี่ยง</h4>
+              <p class="small">ผู้ใกล้ชิดผู้ป่วย, ผู้มีภูมิคุ้มกันต่ำ, ผู้อาศัยในพื้นที่แออัด</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<h3>3) วัณโรคแฝง (Latent TB)</h3>
-<ul>
-    <li>ไม่มีอาการ</li>
-    <li>ตรวจพบเชื้อจากผลเลือด/ทดสอบผิวหนัง</li>
-    <li>อาจกลายเป็นวัณโรคป่วยได้ในอนาคต</li>
-</ul>
-</section>
+    <section style="margin-top:18px" class="card" aria-labelledby="symptoms">
+      <h3 id="symptoms">การสังเกตอาการ</h3>
+      <div class="grid3" style="margin-top:12px">
+        <div>
+          <h4>Pulmonary TB (ปอด)</h4>
+          <ul>
+            <li>ไอเรื้อรัง 2–3 สัปดาห์ขึ้นไป</li>
+            <li>เสมหะมีเลือด</li>
+            <li>เจ็บหน้าอก หายใจลำบาก</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Extrapulmonary TB (นอกปอด)</h4>
+          <p class="small">อาการขึ้นกับอวัยวะ เช่น ต่อมน้ำเหลืองบวม ปวดข้อ ปวดศีรษะ</p>
+        </div>
+        <div>
+          <h4>Latent TB (ติดเชื้อแฝง)</h4>
+          <p class="small">ไม่มีอาการแต่มีเชื้อในร่างกาย</p>
+        </div>
+      </div>
+    </section>
 
-<section>
-<h2>สาเหตุและปัจจัยเสี่ยง</h2>
-<ul>
-    <li>อยู่ใกล้ชิดผู้ป่วยวัณโรค</li>
-    <li>ภูมิคุ้มกันต่ำ เช่น ผู้ติดเชื้อ HIV เบาหวาน</li>
-    <li>ภาวะขาดสารอาหาร</li>
-    <li>การใช้สารเสพติดหรือแอลกอฮอล์</li>
-</ul>
-</section>
+    <section style="margin-top:18px" class="card">
+      <h3>สาเหตุและปัจจัยเสี่ยง</h3>
+      <ul>
+        <li>ภูมิคุ้มกันต่ำ เช่น ผู้ติดเชื้อเอชไอวี</li>
+        <li>เบาหวาน ภาวะโภชนาการไม่ดี</li>
+        <li>สูบบุหรี่ ดื่มแอลกอฮอล์มาก</li>
+      </ul>
+    </section>
 
-<section>
-<h2>ประเภทของวัณโรค</h2>
-<ul>
-    <li><strong>Pulmonary TB</strong> – เกิดในปอด เป็นชนิดที่แพร่เชื้อได้ง่ายที่สุด</li>
-    <li><strong>Extrapulmonary TB</strong> – เกิดที่อวัยวะอื่น เช่น กระดูก ต่อมน้ำเหลือง</li>
-    <li><strong>Drug-resistant TB (MDR/XDR)</strong> – เชื้อดื้อยา ต้องรักษานานขึ้นและใช้ยาหลายชนิด</li>
-</ul>
-</section>
+    <section style="margin-top:18px" class="card">
+      <h3>การรักษา</h3>
+      <p>การรักษาปกติใช้เวลาประมาณ 6 เดือน โดยใช้ยาหลัก 4 ชนิด ได้แก่ INH, RIF, EMB, PZA</p>
+    </section>
 
-<section>
-<h2>การตรวจวินิจฉัย</h2>
-<ul>
-    <li><strong>เอกซเรย์ปอด (Chest X-ray)</strong></li>
-    <li><strong>การตรวจเสมหะ</strong> – ย้อมเชื้อ / เพาะเชื้อ</li>
-    <li><strong>Molecular Test (เช่น GeneXpert)</strong> – ตรวจหา DNA เชื้อและดูการดื้อยา</li>
-</ul>
-</section>
+    <section style="margin-top:18px" class="card resources">
+      <h3>แหล่งข้อมูลและดาวน์โหลด (PDF)</h3>
+      <p class="small">คลิกเพื่อดาวน์โหลดเอกสารแนวทาง</p>
+      <div style="margin-top:10px">
+        <a href="https://ddc.moph.go.th/uploads/publish/1253220220330064337.pdf" target="_blank">แนวทางควบคุมวัณโรค 2564</a>
+        <a href="https://www.who.int/news-room/fact-sheets/detail/tuberculosis" target="_blank">WHO — Tuberculosis</a>
+      </div>
+    </section>
 
-<section>
-<h2>การรักษาวัณโรค</h2>
-<p>สูตรยามาตรฐานสำหรับผู้ป่วยส่วนใหญ่:</p>
-<ul>
-    <li><strong>INH – Isoniazid</strong></li>
-    <li><strong>RIF – Rifampicin</strong></li>
-    <li><strong>PZA – Pyrazinamide</strong></li>
-    <li><strong>EMB – Ethambutol</strong></li>
-</ul>
-<p>การรักษามาตรฐานใช้เวลา <strong>6 เดือน</strong> (ระยะแรก 2 เดือน + ระยะต่อเนื่อง 4 เดือน)</p>
-<p><strong>MDR-TB</strong> ต้องใช้ยาหลายชนิด และรักษานานขึ้น (9–20 เดือน)</p>
-</section>
-
-<section>
-<h2>การดูแลหลังหายป่วย</h2>
-<ul>
-    <li>ติดตามอาการตามแพทย์สั่ง</li>
-    <li>รับประทานอาหารครบ 5 หมู่</li>
-    <li>พักผ่อนให้เพียงพอ</li>
-    <li>งดสูบบุหรี่และแอลกอฮอล์</li>
-</ul>
-</section>
-
-<section>
-<h2>การป้องกันการแพร่เชื้อ</h2>
-<ul>
-    <li>สวมหน้ากากเมื่อไอหรืออยู่ในที่ปิด</li>
-    <li>เปิดประตู-หน้าต่างให้อากาศถ่ายเท</li>
-    <li>ไอ/จามใส่กระดาษทิชชู่ แล้วทิ้งให้ถูกต้อง</li>
-    <li>กินยาตามแพทย์สั่งจนหมด</li>
-</ul>
-</section>
-
-<section>
-<h2>แหล่งข้อมูลเพิ่มเติม</h2>
-<ul>
-    <li><a href="#">WHO – Tuberculosis</a></li>
-    <li><a href="#">CDC – TB Information</a></li>
-    <li><a href="#">กรมควบคุมโรค ประเทศไทย – วัณโรค</a></li>
-</ul>
-</section>
-
-<footer>
-    &copy; 2025 ข้อมูลเพื่อประชาชน – โรควัณโรค (TB)
-</footer>
+    <footer>
+      <p>จัดทำเพื่อเผยแพร่ความรู้เกี่ยวกับวัณโรค — โปรดปรึกษาแพทย์เมื่อมีอาการผิดปกติ</p>
+      <p class="small" style="margin-top:6px"><strong>จัดทำโดย นางสาว กษมา ปันยารชุน</strong></p>
+    </footer>
+  </main>
 </body>
 </html>
