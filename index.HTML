@@ -46,13 +46,33 @@
   </style>
 
   <script>
-    function openTab(id){
-      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-      document.getElementById('tab-'+id).classList.add('active');
-      document.getElementById('content-'+id).classList.add('active');
-    }
-  </script>
+function openTab(id){
+  // remove active from all
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+  const tab = document.getElementById('tab-'+id);
+  const content = document.getElementById('content-'+id);
+  if(tab && content){
+    tab.classList.add('active');
+    content.classList.add('active');
+  }
+}
+
+// initialize safely after DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // attach click handlers (in case inline onclick removed)
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const id = tab.id.replace(/^tab-/, '');
+      openTab(id);
+    });
+  });
+
+  // ensure there is exactly one active tab/content
+  if(!document.querySelector('.tab.active')) openTab('home');
+  if(!document.querySelector('.tab-content.active')) openTab('home');
+});
+</script>
 </head>
 <body>
   <header>
